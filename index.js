@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const http = require("http").Server(app);
 const cors = require("cors");
+var dotenv = require("dotenv");
 
+dotenv.config();
 app.use(cors());
 const socketIO = require("socket.io")(http, {
   cors: {
@@ -46,6 +48,6 @@ app.get("/api", (req, res) => {
   });
 });
 
-http.listen(4000, () => {
-  console.log(`Server listening on`);
+http.listen(process.env.PORT || 4000, () => {
+  console.log(`Server listening on 4000`);
 });
