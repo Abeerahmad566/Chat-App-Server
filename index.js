@@ -6,7 +6,7 @@ const cors = require("cors");
 app.use(cors());
 const socketIO = require("socket.io")(http, {
   cors: {
-    origin: "https://mern-chat-appp.netlify.app/",
+    origin: "http://localhost:3000",
   },
 });
 let users = [];
@@ -47,5 +47,5 @@ app.get("/api", (req, res) => {
 });
 
 http.listen(4000, () => {
-  console.log(`Server listening on ${4000}`);
+  console.log(`Server listening on`);
 });
